@@ -1,0 +1,11 @@
+<h2>Checkout</h2>
+
+<label>Name:</label>
+<input [(ngModel)]="name" /><br /><br />
+
+<label>Address:</label><br />
+<textarea [(ngModel)]="address" rows="3" cols="30"></textarea><br /><br />
+
+<button (click)="placeOrder()">Place Order</button>
+
+<p *ngIf="message" style="margin-top:15px; color:green;">{{ message }}</p>

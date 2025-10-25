@@ -1,0 +1,30 @@
+<h2>Available Products</h2>
+
+<div style="margin-bottom:15px;">
+  <input
+    [(ngModel)]="searchTerm"
+    placeholder="Search products..."
+    style="padding:6px; width:200px;"
+  />
+
+  <select [(ngModel)]="category" style="padding:6px; margin-left:10px;">
+    <option>All</option>
+    <option>Fruits</option>
+    <option>Vegetables</option>
+    <option>Dairy</option>
+    <option>Bakery</option>
+    <option>Grains</option>
+  </select>
+</div>
+
+<div style="display:flex; gap:15px; flex-wrap:wrap;">
+  <div
+    *ngFor="let p of filteredProducts()"
+    style="border:1px solid #ccc; padding:10px; width:180px; border-radius:6px;"
+  >
+    <strong>{{ p.name }}</strong><br />
+    ₹{{ p.price }} / {{ p.unit }}<br />
+    <small>{{ p.category }}</small><br /><br />
+    <button (click)="add(p)">Add to Cart</button>
+  </div>
+</div>
